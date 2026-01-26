@@ -29,7 +29,7 @@ print (" ")
 #Kamu sedang membuat program kecil untuk mengelola daftar game yang kamu mainkan. Setiap game memiliki:
 """Nama
 Tahun rilis
-Rating (skala 1–10)
+Rating (skala 1-10)
 Kamu ingin menampilkan daftar game terbaik dengan aturan:
 
 Prioritas utama: rating tertinggi (descending → dari 10 ke 1)
