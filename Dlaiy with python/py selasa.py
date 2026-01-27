@@ -123,7 +123,7 @@ for b in hewan:
     b = b.replace("tidak memiliki", "memiliki")
     b = b.replace("bulu lebat", "kecepatan")
     b = b.replace("mnyt", "monyet")
-    b =b.replace("taring tajam", "ekor pajang")
+    b = b.replace("taring tajam", "ekor pajang")
     b = b.replace("atas pohon", "padang rumput")
     copy.append(b)
     

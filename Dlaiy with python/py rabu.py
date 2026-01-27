@@ -1,4 +1,4 @@
-#Operasi List, Set, dan String
+# Operasi List, Set, dan String
 
 """len() = mengihitung jumlah total elemen
 max() = mengembalikan nilai terbesar dari sekumlupan data atau elemen
@@ -24,7 +24,6 @@ angka = {1, 2, 3, 4, 5}
 print(len(angka))         # Output: 5
 print(max(angka))         # Output: 5
 print(min(angka))         # Output: 1
-print(angka.count(3))     # Output: 1
 print(3 in angka)         # Output: True
 print(6 not in angka)      # Output: True
 angka.add(6)
