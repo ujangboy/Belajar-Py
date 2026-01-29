@@ -135,11 +135,12 @@ print("----------------------")
 # c) List berisi string dari setiap angka ("1", "2", "3", ...)
 # TODO: Tulis kode Anda di bawah
 list_angka = [1,2,3,4,5,6,7,8,9,10]
-kuadrat = [a ** 2 for a in list_angka]        # a) Kuadrat dari setiap angka
-genap = [a for a in list_angka if a % 2 == 0] # b) Hanya angka genap
-string_angka = [str(a) for a in list_angka]   # c) String dari setiap angka
-print(f"a) Kuadrat dari setiap angka: {kuadrat}")
-print(f"c) String dari setiap angka: {string_angka}")
+kuadrat = [a ** 2 for a in list_angka]        # a Kuadrat dari setiap angka
+genap = [a for a in list_angka if a % 2 == 0] # b Hanya angka genap
+string_angka = [str(a) for a in list_angka]   # c String dari setiap angka
+print(f"a Kuadrat dari setiap angka: {kuadrat}")
+print(f"b Hanya angka genap: {genap}")
+print(f"c String dari setiap angka: {string_angka}")
 print(" ")
 print("----------------------------")
 
@@ -152,8 +153,26 @@ print("----------------------------")
 # 90-100: A, 80-89: B, 70-79: C, 60-69: D, <60: E
 # Buat untuk nilai: 85, 75, 55
 # TODO: Tulis kode Anda di bawah
-
-
+nilai1 = 85
+nilai2 = 75
+nilai3 = 55
+def tentukan_grade(nilai):
+  if nilai >= 90:
+    return "A"
+  elif nilai >= 80:
+    return "B"
+  elif nilai >= 70:
+    return "C"
+  elif nilai >= 60:
+    return "D"
+  else:
+    return "E"
+print(f"Nilai: {nilai1}, Grade: {tentukan_grade(nilai1)}")
+print(f"Nilai: {nilai2}, Grade: {tentukan_grade(nilai2)}")
+print(f"Nilai: {nilai3}, Grade: {tentukan_grade(nilai3)}")
+print(" ")
+print("----------------------------")
+print(" akooo ")
 # Soal 10: Cek Bilangan
 # Buat program untuk cek apakah sebuah angka:
 # a) Positif, negatif, atau nol
