@@ -15,12 +15,12 @@ Selesaikan setiap soal dan gunakan print() untuk menampilkan hasil.
 # Buat 3 variabel dengan tipe data berbeda (int, str, float)
 # dan tampilkan tipenya menggunakan type()
 # TODO: Tulis kode Anda di bawah
-int = 10
-str = "Halo Dunia"
-float = 20.5
-print(type(int))
-print(type(str))
-print(type(float))
+angga = 10
+kata = "Halo Dunia"
+desimal = 20.5
+print(type(angga))
+print(type(kata))
+print(type(desimal))
 
 # Soal 2: Operasi Aritmatika
 # Diberi variabel a = 15, b = 4
@@ -112,6 +112,7 @@ nama_buah.append("rambutan") # c) Tambahkan "rambutan" di akhir list
 nama_buah.remove("jeruk")   # d) Hapus "jeruk" dari list
 print(nama_buah)
 print(" ")
+
 # Soal 7: Slicing List
 # Diberikan list: numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90]
 # a) Ambil elemen dari index 2 sampai 5
@@ -122,7 +123,10 @@ print(" ")
 numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90]
 print(f"a) Ambil elemen dari index 2 sampai 5: {numbers[2:6]}")        # a) Ambil elemen dari index 2 sampai 5
 print(f"b) Ambil 4 elemen pertama: {numbers[:4]}")                  # b) Ambil 4 elemen pertama
-print(f"c) ambil 3 elemen terakhir: {numbers[:-5]}")               # c) Ambil 3 elemen terakhir
+print(f"c) ambil 3 elemen terakhir: {numbers[-3:]}")               # c) Ambil 3 elemen terakhir
+print(" ")
+print("----------------------")
+
 # Soal 8: List Comprehension
 # Buat list berisi angka 1-10, kemudian buat list baru dengan
 # menggunakan list comprehension:
@@ -130,7 +134,14 @@ print(f"c) ambil 3 elemen terakhir: {numbers[:-5]}")               # c) Ambil 3 
 # b) List berisi hanya angka genap
 # c) List berisi string dari setiap angka ("1", "2", "3", ...)
 # TODO: Tulis kode Anda di bawah
-
+list_angka = [1,2,3,4,5,6,7,8,9,10]
+kuadrat = [a ** 2 for a in list_angka]        # a) Kuadrat dari setiap angka
+genap = [a for a in list_angka if a % 2 == 0] # b) Hanya angka genap
+string_angka = [str(a) for a in list_angka]   # c) String dari setiap angka
+print(f"a) Kuadrat dari setiap angka: {kuadrat}")
+print(f"c) String dari setiap angka: {string_angka}")
+print(" ")
+print("----------------------------")
 
 # ============================================================================
 # BAGIAN 4: KONDISIONAL (IF-ELSE)
