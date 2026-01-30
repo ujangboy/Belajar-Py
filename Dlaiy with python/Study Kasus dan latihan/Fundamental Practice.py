@@ -172,15 +172,45 @@ print(f"Nilai: {nilai2}, Grade: {tentukan_grade(nilai2)}")
 print(f"Nilai: {nilai3}, Grade: {tentukan_grade(nilai3)}")
 print(" ")
 print("----------------------------")
-print(" akooo ")
+
 # Soal 10: Cek Bilangan
 # Buat program untuk cek apakah sebuah angka:
 # a) Positif, negatif, atau nol
 # b) Genap atau ganjil
 # c) Prima atau bukan (gunakan angka: 7, 10, 13)
 # TODO: Tulis kode Anda di bawah
-
-
+def cek_bilangan(angka):
+  # a) Positif, negatif, atau nol
+  if angka > 0:
+    status = "Positif"
+  elif angka < 0:
+    status = "Negatif"
+  else:
+    status = "Nol"
+  
+  # b) Genap atau ganjil
+  if angka % 2 == 0:
+    genap_ganjil = "Genap"
+  else:
+    genap_ganjil = "Ganjil"
+  
+  # c) Prima atau bukan
+  if angka > 1:
+    for i in range(2, int(angka**0.5) + 1):
+      if angka % i == 0:
+        prima = "Bukan Prima"
+        break
+    else:
+      prima = "Prima"
+  else:
+    prima = "Bukan Prima"
+  
+  return status, genap_ganjil, prima
+print(cek_bilangan(7))
+print(cek_bilangan(10)) 
+print(cek_bilangan(13))
+print(" ")
+print("----------------------------")
 # ============================================================================
 # BAGIAN 5: LOOP (FOR & WHILE)
 # ============================================================================
@@ -190,14 +220,51 @@ print(" akooo ")
 # b) Cetak angka ganjil dari 1-20
 # c) Cetak tabel perkalian 5 (5x1=5, 5x2=10, ... 5x10=50)
 # TODO: Tulis kode Anda di bawah
-
-
+print("a) Cetak angka 1-10")
+for angka_loop in range(1, 11):
+    print(angka_loop)                    # a) Cetak angka 1-10 menggunakan for loop
+print("----------------------------")    
+print("b) Cetak angka ganjil dari 1-20")
+for angka_ganjil in range(1, 20):
+    if angka_ganjil % 2 != 0:
+      print(angka_ganjil)              # b) Cetak angka ganjil dari 1-20
+print("----------------------------")
+print("c) Cetak tabel perkalian 5")
+for i in range(1, 11):
+    print(f"5 x {i} = {5 * i}")        # c) Cetak tabel perkalian 5   
+    
+print(" ")
+print("----------------------------")
 # Soal 12: Loop dengan WHILE
 # a) Cetak angka dari 10 menurun ke 1
 # b) Minta user input angka terus-menerus hingga user input "keluar"
 # c) Hitung jumlah bilangan ganjil dari 1-50 menggunakan while loop
 # TODO: Tulis kode Anda di bawah
-
+print("a) Cetak angka dari 10 menurun ke 1:")
+for i in range(10, 0, -1):
+    print(i)                           # a) Cetak angka dari 10 menurun ke 1
+print("----------------------------")
+# b) Diblok karena akan menggunakan input (jalankan terpisah jika diperlukan)
+"""
+while True:
+  user_input = input("b) Masukkan angka (ketik 'keluar' untuk berhenti): ")
+  
+  if user_input == "keluar":
+    print("Program berhenti.")
+    break
+  
+  print(f"Anda memasukkan angka: {user_input}")
+"""
+# c) Hitung jumlah bilangan ganjil dari 1-50 menggunakan while loop
+print("c) Hitung jumlah bilangan ganjil dari 1-50:")
+angka = 1
+jumlah_ganjil = 0
+while angka <= 50:
+    if angka % 2 != 0:
+        jumlah_ganjil += 1
+    angka += 1
+print(f"Total bilangan ganjil dari 1-50: {jumlah_ganjil}")
+print("----------------------------")
 
 # Soal 13: Nested Loop
 # Buat segitiga angka dengan pola:
@@ -207,8 +274,13 @@ print(" akooo ")
 # 1 2 3 4
 # 1 2 3 4 5
 # TODO: Tulis kode Anda di bawah
-
-
+print("Soal 13: Nested Loop - Segitiga Angka")
+for baris in range(1, 6):
+    for kolom in range(1, baris + 1):
+      print(kolom, end=" ")
+    print()  # Pindah ke baris berikutnya setelah selesai satu baris
+print("----------------------------")
+print(" ")
 # ============================================================================
 # BAGIAN 6: FUNGSI (FUNCTION)
 # ============================================================================
@@ -219,8 +291,17 @@ print(" akooo ")
 # b) luas_persegi(sisi) - return luas persegi
 # c) hitung_rata_rata(a, b, c) - return rata-rata 3 angka
 # TODO: Tulis kode Anda di bawah
+def sapa(nama):
+    return f"Halo {nama}, selamat datang!"
 
+print(sapa("Andi"))
+print(sapa("Budi"))
 
+def luas_persegi(sisi):
+    return sisi * sisi 
+
+print(f"Luas persegi dengan sisi 4: {luas_persegi(4)}")
+print(f"Luas persegi dengan sisi 7: {luas_persegi(7)}")
 # Soal 15: Fungsi dengan Default Parameter
 # Buat fungsi intro(nama, kota="Jakarta", pekerjaan="Engineer")
 # Yang menampilkan: "Nama saya {nama}, saya dari {kota}, pekerjaan saya {pekerjaan}"
