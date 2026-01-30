@@ -302,19 +302,51 @@ def luas_persegi(sisi):
 
 print(f"Luas persegi dengan sisi 4: {luas_persegi(4)}")
 print(f"Luas persegi dengan sisi 7: {luas_persegi(7)}")
+
+def hitung_rata_rata(a, b, c):
+    return (a + b + c) / 3
+
+print(f"Rata-rata dari 5, 10, 15: {hitung_rata_rata(5, 10, 15)}")
+print(" ")
+print("----------------------------")
 # Soal 15: Fungsi dengan Default Parameter
 # Buat fungsi intro(nama, kota="Jakarta", pekerjaan="Engineer")
 # Yang menampilkan: "Nama saya {nama}, saya dari {kota}, pekerjaan saya {pekerjaan}"
 # Panggil dengan 1 argument, 2 arguments, dan 3 arguments
 # TODO: Tulis kode Anda di bawah
+def intro(nama, kota="Jakarta", pekerjaan="Engineer"):
+    return f"Nama saya {nama}, saya dari {kota}, pekerjaan saya {pekerjaan}"
 
+# Panggil dengan 1 argument
+print(intro("Ali"))
+# Output: Nama saya Ali, saya dari Jakarta, pekerjaan saya Engineer
+
+# Panggil dengan 2 arguments (ganti kota)
+print(intro("Budi", "Bandung"))
+# Output: Nama saya Budi, saya dari Bandung, pekerjaan saya Engineer
+
+# Panggil dengan 3 arguments
+print(intro("Citra", "Surabaya", "Developer"))
+# Output: Nama saya Citra, saya dari Surabaya, pekerjaan saya Developer
 
 # Soal 16: Fungsi dengan *args (Multiple Arguments)
 # Buat fungsi jumlahkan(*angka) yang menjumlahkan semua argument
 # Test dengan jumlahkan(5), jumlahkan(5, 10), jumlahkan(1, 2, 3, 4, 5)
 # TODO: Tulis kode Anda di bawah
+def jumlahkan(*angka):
+    """*angka = menerima BANYAK arguments"""
+    total = 0
+    for a in angka:
+        total += a
+    return total
 
+# Test berbagai jumlah argument
+print(jumlahkan(5))                    # Output: 5
+print(jumlahkan(5, 10))                # Output: 15
+print(jumlahkan(1, 2, 3, 4, 5))        # Output: 15
 
+print(" ")
+print("----------------------------")
 # ============================================================================
 # BAGIAN 7: DICTIONARY
 # ============================================================================
