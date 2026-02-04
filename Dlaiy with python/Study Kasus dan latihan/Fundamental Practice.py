@@ -359,7 +359,20 @@ print("----------------------------")
 # c) Tambahkan key baru 'email': 'budi@gmail.com'
 # d) Hapus key 'kota'
 # TODO: Tulis kode Anda di bawah
+data_diri = {'nama': 'Budi', 'usia': 20, 'kota': 'Jakarta', 'hobi': 'programming'}
 
+print(f"a) Nama: {data_diri['nama']}, Hobi: {data_diri['hobi']}")  # a) Akses nilai dari key 'nama' dan 'hobi'
+before = data_diri['usia']
+print(f"b) Usia sebelum diubah: {before}")
+data_diri['usia'] = 21
+after = data_diri['usia']
+print(f"   Usia setelah diubah: {after}")                            # b) Ubah nilai 'usia' menjadi 21
+data_diri['email'] = 'budi12@gmail.com'
+print(f"c) Tambah email: {data_diri['email']}")                     # c) Tambahkan key baru 'email': '
+del data_diri['kota']
+print(f"d) Hapus kota, sisa data: {data_diri}")                     # d) Hapus key 'kota'
+print(" ")
+print("----------------------------")
 
 # Soal 18: Loop Dictionary
 # Diberikan dictionary:
@@ -369,7 +382,18 @@ print("----------------------------")
 # c) Cetak nama dan nilai dalam format: "Budi mendapat nilai 85"
 # d) Cari siswa dengan nilai tertinggi
 # TODO: Tulis kode Anda di bawah
+siswa = {'Budi': 85, 'Ani': 92, 'Citra': 78, 'Doni': 88}
 
+for nama in siswa:
+    print(nama)
+for nilai in siswa.values():
+    print(nilai)
+for nama, nilai in siswa.items():
+    print(f"{nama} mendapat nilai {nilai}")
+tertinggi = max(siswa, key=siswa.get)
+print(f"Siswa dengan nilai tertinggi: {tertinggi} dengan nilai {siswa[tertinggi]}")
+print(" ")
+print("----------------------------")
 
 # Soal 19: Merge Dictionary
 # Diberikan dua dictionary:
@@ -377,7 +401,18 @@ print("----------------------------")
 # dict2 = {'c': 3, 'd': 4}
 # Gabungkan keduanya menjadi dict3 = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
 # TODO: Tulis kode Anda di bawah
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'c': 3, 'd': 4}
 
+# Cara 1: Menggunakan update()
+dict3 = dict1.copy()  # Buat salinan dict1
+dict3.update(dict2)   # Gabungkan dict2 ke dict3
+print(f"Cara 1 - Menggunakan update(): {dict3}")
+# Cara 2: Menggunakan unpacking (Python 3.5+)
+dict3_unpack = {**dict1, **dict2}
+print(f"Cara 2 - Menggunakan unpacking: {dict3_unpack}")
+print(" ")
+print("----------------------------")
 
 # ============================================================================
 # BAGIAN 8: KOMBINASI (ADVANCED)
@@ -395,8 +430,29 @@ print("----------------------------")
 # c) Cari siswa dengan nilai tertinggi
 # d) Cetak siswa yang mendapat nilai di atas 80
 # TODO: Tulis kode Anda di bawah
+data_siswa = [
+   {'nama': 'Ani', 'nilai': 92},
+   {'nama': 'Citra', 'nilai': 78},
+   {'nama': 'Budi', 'nilai': 85}
+] 
+for data in data_siswa:
+    print(data['nama'])
+def hitung_rata_rata_siswa(siswa_list):
+    total_nilai = 0
+    for siswa in siswa_list:
+        total_nilai += siswa['nilai']
+    rata_rata = total_nilai / len(siswa_list)
+    return rata_rata
+print(f"Rata-rata nilai semua siswa: {hitung_rata_rata_siswa(data_siswa)}")
+siswa_tertinggi = max(data_siswa, key=lambda x: x['nilai'])
+print(f"Siswa dengan nilai tertinggi: {siswa_tertinggi['nama']} dengan nilai {siswa_tertinggi['nilai']}")
 
-
+print("Siswa yang mendapat nilai di atas 80:")
+for siswa in data_siswa:
+    if siswa['nilai'] > 80:
+        print(f"{siswa['nama']} dengan nilai {siswa['nilai']}")
+print(" ")
+print("----------------------------")
 # Soal 21: Cleaning Data (Seperti latihan Anda di latihan selasa.py)
 # Diberikan data kotor:
 # data = [
@@ -409,6 +465,23 @@ print("----------------------------")
 # b) Ganti angka dengan huruf yang benar (4->a, 1->i, dst)
 # c) Kapitalkan huruf pertama setiap kalimat
 # TODO: Tulis kode Anda di bawah
+data = [
+   "NAma s4y4 4l1 R4hm4n",
+   "hAri iNi mErah",
+   "Saya suka PYTHON"
+ ]
+bersih = []
+for kalimat in data:
+    kalimat = kalimat.lower()
+    kalimat = kalimat.replace("4", "a").replace("1", "i").replace("0", "o").replace("3", "e").replace("5", "s")
+    kalimat = kalimat.capitalize()
+    bersih.append(kalimat)
+print("Data setelah dibersihkan:")
+for b in bersih:
+    print(b)
+print(" ")
+print("----------------------------")
+# ============================================================================
 
 
 # Soal 22: Challenge - Hitung Frekuensi Kata
@@ -419,7 +492,19 @@ print("----------------------------")
 # c: 3 kali
 # (Gunakan dictionary atau method count())
 # TODO: Tulis kode Anda di bawah
-
+kata = "python python java python java c c c python"
+kata_list = kata.split(" ")
+frekuensi = {}
+for k in kata_list:
+    if k in frekuensi:
+        frekuensi[k] += 1
+    else:
+        frekuensi[k] = 1
+for k, v in frekuensi.items():
+    print(f"{k}: {v} kali")
+print(" ")
+print("------------------------------------------------------------------")
+# ============================================================================
 
 """
 ================================================================================
