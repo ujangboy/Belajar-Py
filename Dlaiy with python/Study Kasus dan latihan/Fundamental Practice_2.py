@@ -15,14 +15,26 @@ Selesaikan setiap soal dan gunakan print() untuk menampilkan hasil.
 # Diberi variabel: nama = "Andi", umur = 17, tinggi = 172.5
 # Buat output dalam format: "Halo, saya Andi berumur 17 tahun dengan tinggi 172.5 cm."
 # TODO: Tulis kode Anda di bawah
-
+print("Soal 1: Kombinasi Umur dan Nama")
+Nama = "Andi"
+umur = 17
+tinggi = 172.5
+output = (f"Halo, saya {Nama} berumur {umur} tahun dengan tinggi {tinggi} cm.")
+print(output)
+print(" ")
+print("========================================")
 
 # Soal 2: Konversi Suhu
 # Diberi suhu dalam Celsius: 25 derajat
 # Konversi ke Fahrenheit: (C * 9/5) + 32
 # Tampilkan: "25°C sama dengan ...°F"
 # TODO: Tulis kode Anda di bawah
-
+print("Soal 2: Konversi Suhu")
+suhu = 25
+fahrenheit = (suhu * 9/5) + 32
+print(f"{suhu}c sama dengan {fahrenheit}F")
+print(" ")
+print("========================================")
 
 # ============================================================================
 # BAGIAN 2: KOMBINASI LIST & KONDISIONAL
@@ -34,7 +46,23 @@ Selesaikan setiap soal dan gunakan print() untuk menampilkan hasil.
 # b) Kelompokkan nilai menjadi: "Lulus (>75)" dan "Remedial (≤75)"
 # c) Cetak berapa banyak siswa yang lulus dan remedial
 # TODO: Tulis kode Anda di bawah
+nilai = [85, 92, 78, 60, 45, 88, 76, 95, 50]
+print ("Soal 3: Analisis Nilai Siswa")
+print("Daftar Nilai Siswa:")
+for n in nilai:
+   print(n)
 
+lulus = []
+remedial = []
+for n in nilai:
+    if n > 75:
+        lulus.append(n)
+    else:
+        remedial.append(n)
+print(f"Banyak siswa yang lulus: {len(lulus)}")
+print(f"Banyak siswa yang remedial: {len(remedial)}")
+print(" ")
+print("========================================")
 
 # Soal 4: Pencarian & Manipulasi List
 # Diberi list buah: ["apel", "mangga", "jeruk", "apel", "anggur", "mangga", "apel"]
