@@ -86,7 +86,8 @@ Format TODO - Tulis kode Anda sendiri!
 
 teks = "python adalah bahasa python yang menarik untuk python programming"
 # TODO: Ganti "python" dengan "javascript"
-
+bersihkan_teks = teks.replace("python", "javascript")
+print(bersihkan_teks)
 
 print("\n" + "=" * 60)
 
@@ -98,7 +99,8 @@ print("\n" + "=" * 60)
 
 kata = "HELLO"
 # TODO: Gunakan isupper() untuk cek dan print hasilnya
-
+cek_kata = kata.isupper()
+print(cek_kata)
 
 print("\n" + "=" * 60)
 
@@ -110,7 +112,8 @@ print("\n" + "=" * 60)
 
 text = "helloworld"
 # TODO: Gunakan islower() dan tampilkan hasilnya
-
+cek_lower = text.islower()
+print(cek_lower)
 
 print("\n" + "=" * 60)
 
@@ -122,8 +125,12 @@ print("\n" + "=" * 60)
 
 data = ["python", "python123", "coding", "program!"]
 # TODO: Loop melalui list, cek dengan isalpha(), print hasilnya
-
-
+hanyaHuruf = []
+for item in data:
+    if item.isalpha():
+        hanyaHuruf.append(item)
+print(hanyaHuruf)
+        
 print("\n" + "=" * 60)
 
 # ================================
@@ -134,6 +141,13 @@ print("\n" + "=" * 60)
 
 password = "pass123"
 # TODO: Cek dengan isalnum() dan print "Valid" atau "Invalid"
+for char in password:
+    if password.isalnum():
+        print("Valid")
+        break
+    else:
+        print("Invalid")
+        break
 
 
 print("\n" + "=" * 60)
@@ -146,7 +160,11 @@ print("\n" + "=" * 60)
 
 numbers = ["123", "12.5", "12a", "999"]
 # TODO: Loop dan cek dengan isdecimal(), print yang valid
-
+hanya_decimal = []
+for angka_desimal in numbers:
+    if angka_desimal.isdecimal():
+        hanya_decimal.append(angka_desimal)
+print(hanya_decimal)
 
 print("\n" + "=" * 60)
 
@@ -158,7 +176,8 @@ print("\n" + "=" * 60)
 
 spasi = "   "
 # TODO: Gunakan isspace() dan print hasilnya
-
+cek_spasi = spasi.isspace()
+print(cek_spasi)
 
 print("\n" + "=" * 60)
 
@@ -170,7 +189,11 @@ print("\n" + "=" * 60)
 
 judul_list = ["Hello World", "hello world", "Python Programming", "PYTHON"]
 # TODO: Loop dan cek dengan istitle(), print hasilnya
-
+cek_title = []
+for judul in judul_list:
+    if judul.istitle():
+        cek_title.append(judul)
+print(cek_title)
 
 print("\n" + "=" * 60)
 
@@ -185,7 +208,13 @@ print("\n" + "=" * 60)
 
 username_test = ["python", "PY", "python123", "PY@THON", "mycode2024"]
 # TODO: Validasi setiap username sesuai kriteria di atas
-
+validasi = []
+for validasi_username in username_test:
+    if (len(validasi_username) >= 5):
+        if validasi_username.isalnum():
+            if not validasi_username.isupper():
+                validasi.append(validasi_username)
+print(validasi)
 
 print("\n" + "=" * 60)
 
@@ -198,7 +227,12 @@ print("\n" + "=" * 60)
 
 kalimat = "Hello World"
 # TODO: Gunakan istitle() dan kombinasi method lain untuk validasi
-
+cek_title_case = kalimat.istitle()
+cek_simbol = kalimat.isalpha()
+cek_spasi = kalimat.isspace()
+print(cek_title_case)
+print(cek_simbol)
+print(cek_spasi)
 
 print("\n" + "=" * 60)
 
