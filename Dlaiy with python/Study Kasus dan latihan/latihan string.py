@@ -48,27 +48,21 @@ cek_kalimat = [
     "12345",
     "   ",
     "Halo Dunia!",
-    "ABC123XYZ"
+    "Hello_World"
 ]
     
 cek_bersih =[]
 for bersih in cek_kalimat:
-    if bersih.isalpha():
-       cek_bersih.append(bersih)
-    elif bersih.isupper():
-        cek_bersih.append(bersih.lower())
-    elif bersih.islower():
-        cek_bersih.append(bersih)
-    elif bersih.isalnum():
-        cek_bersih.append(bersih)
-    elif bersih.isdecimal():
-        cek_bersih.append(bersih)
-    elif bersih.isspace():
-        cek_bersih.append(bersih)
-    elif not bersih.isalpha():
-        continue # Hapus kata dengan angka/simbol   
+    if bersih.isalnum() or bersih.isspace():
+        continue
+    if any(not c.isalnum() and not c.isspace() for c in bersih):
+        continue
+    if not any(c.isupper() for c in bersih):
+        continue
+    cek_bersih.append(bersih)
     
 print(cek_bersih)
+
 print(" ")
 print("----------------------------")    
 
@@ -165,6 +159,9 @@ for angka_desimal in numbers:
     if angka_desimal.isdecimal():
         hanya_decimal.append(angka_desimal)
 print(hanya_decimal)
+#ada yang versi ebih enak di baca 
+hanya_decimal = [n for n in numbers if n.isdecimal()]
+print(hanya_decimal)
 
 print("\n" + "=" * 60)
 
@@ -194,6 +191,9 @@ for judul in judul_list:
     if judul.istitle():
         cek_title.append(judul)
 print(cek_title)
+#ada yang lebih enak di baca
+cek_title = [j for j in judul_list if j.istitle()]
+print(cek_title)
 
 print("\n" + "=" * 60)
 
@@ -215,6 +215,11 @@ for validasi_username in username_test:
             if not validasi_username.isupper():
                 validasi.append(validasi_username)
 print(validasi)
+# ada yang lebih enak di baca
+validasi = [
+    user for user in username_test
+    if len(user) >= 5 and user.isalnum() and not user.isupper()
+]
 
 print("\n" + "=" * 60)
 
@@ -230,9 +235,15 @@ kalimat = "Hello World"
 cek_title_case = kalimat.istitle()
 cek_simbol = kalimat.isalpha()
 cek_spasi = kalimat.isspace()
-print(cek_title_case)
-print(cek_simbol)
-print(cek_spasi)
+print(cek_title_case)   
+print(cek_simbol)      # salah 
+print(cek_spasi)       # salah
+print("yang sudah di koreksi")
+# koreksi labih jelas
+cek_title_case = kalimat.istitle()
+cek_hanya_huruf_dan_spasi = all(c.isalpha() or c.isspace() for c in kalimat)
+valid = cek_title_case and cek_hanya_huruf_dan_spasi
+print(valid)
 
 print("\n" + "=" * 60)
 
@@ -247,8 +258,13 @@ print("\n" + "=" * 60)
 
 data_raw = ["  python  ", "  coding123  ", "  programming  ", "  !special!  "]
 # TODO: Clean, validasi dengan isalpha(), dan uppercase jika valid
-
-
+filter_data = []
+for filter in data_raw:
+    bersih = filter.strip()
+    if bersih.isalpha():
+        filter_data.append(bersih.upper()) # typo harus uppercase
+print(filter_data)
+          
 print("\n" + "=" * 60)
 
 # ================================
@@ -264,7 +280,19 @@ print("\n" + "=" * 60)
 
 mixed_data = ["python", "12345", "python123", "   ", "hello@world"]
 # TODO: Loop dan identifikasi tipe setiap data
-
+for camouran_data in mixed_data:
+    bersih = camouran_data.strip()
+    if bersih.isalpha():
+        print(f"{bersih}: HURUF")
+    elif bersih.isdecimal():
+        print(f"{bersih}: ANGKA")
+    elif bersih.isalnum():
+        print(f"{bersih}: ALFANUMERIK")
+    elif bersih.isspace():
+        print(f"{bersih}: WHITESPACE")
+    else:
+        print(f"{bersih}: CAMPURAN")
+    
 
 print("\n" + "=" * 60)
 
@@ -278,7 +306,10 @@ print("\n" + "=" * 60)
 
 text_original = "PYTHON programming"
 # TODO: Replace dan cek hasilnya dengan istitle()
-
+cek_replace = text_original.lower().replace("python", "java")
+cek_text_title =cek_replace.istitle()
+ 
+print(cek_text_title)
 
 print("\n" + "=" * 60)
 
@@ -295,7 +326,14 @@ email = "user@gmail.com"
 password = "MyPass123"
 phone = "08123456789"
 # TODO: Validasi ketiga field di atas
-
+valid_email = all(c.isalnum() or c in "@" or c == "." for c in email)
+valid_password = (len(password) >= 8 and 
+                  any(c.isupper() for c in password) and 
+                  any(c.isdigit() for c in password))
+valid_phone = (phone.isdecimal() and len(phone) >= 10)
+print(f"Email valid: {valid_email}")
+print(f"Password valid: {valid_password}")
+print(f"Phone valid: {valid_phone}")
 
 print("\n" + "=" * 60)
 
@@ -310,8 +348,116 @@ print("\n" + "=" * 60)
 
 words = ["hello_world", "PYTHON", "coding Language"]
 # TODO: Format setiap kata sesuai aturan di atas
-
+for valid in words:
+    if valid.islower():
+        format = valid.replace("_", " ").title()
+        print(f"before {valid}", f"after {format}")
+    elif valid.isupper():
+        format = valid.lower()
+        print(f"before {valid}", f"after {format}")
+  
+    else:
+        valid.replace("_", " ").istitle()
+        format = valid.replace("_", " ")
+        print(f"before {valid}", f"after {format}")
+    
 
 print("\n" + "=" * 60)
 print("SELESAI! Cek semua TODO di atas ✓")
 print("=" * 60)
+print(" ")
+
+print("latihan 2 ")
+
+# ================================
+# TODO 1: GANTI KATA
+# ================================
+# Soal: Ganti semua kata "python" menjadi "java" dalam string berikut,
+#       lalu ubah ke uppercase.
+# Input: "Belajar python itu menyenangkan, python mudah dipelajari."
+# Output: "BELAJAR JAVA ITU MENYENANGKAN, JAVA MUDAH DIPELAJARI."
+
+# Tambahkan kode Anda di sini:
+
+text1 = "Belajar python itu menyenangkan, python mudah dipelajari."
+# Jawaban Anda:
+ganti_kata = text1.replace("python", "java").upper()
+print(ganti_kata)
+
+print("=" * 50)
+
+# ================================
+# TODO 2: VALIDASI USERNAME
+# ================================
+# Soal: Dari list username berikut, tampilkan yang:
+#       - Panjang minimal 5 karakter
+#       - Hanya mengandung huruf dan angka
+#       - Tidak semua huruf besar
+# Tambahkan kode Anda di sini:
+
+usernames = ["alice123", "BOB", "charlie", "dave42", "EVA2", "user_name", "py123"]
+# Jawaban Anda:
+valid_usernames = []
+for name in usernames:
+    #untuk panjang karekter miniml 5, name.isalnum hanya huruf dan angka, tidak semua huruf besar
+    if (len(name) >=5 and name.isalnum() and not name.isupper()):
+        valid_usernames.append(name)
+print(valid_usernames)
+
+print("=" * 50)
+
+# ================================
+# TODO 3: FILTER KATA
+# ================================
+# Soal: Dari list berikut, ambil hanya yang:
+#       - Hanya berisi huruf
+#       - Huruf pertama kapital
+#       - Panjang lebih dari 3 karakter
+# Tambahkan kode Anda di sini:
+
+words = ["Apple", "banana", "Cherry", "Date", "elephant", "Fig", "Grape"]
+# Jawaban Anda:
+for word in words:
+    if word.isalpha() and word.istitle() and len(word) > 3:
+        print(word)
+
+print("=" * 50)
+
+# ================================
+# TODO 4: FORMAT TEKS
+# ================================
+# Soal: Dari list berikut, ubah setiap item menjadi:
+#       - Jika hanya huruf → ubah ke uppercase
+#       - Jika mengandung angka → hapus angkanya dan ubah ke title case
+#       - Jika hanya angka → ubah ke "NUMBER"
+# Tambahkan kode Anda di sini:
+
+mixed_list = ["hello", "world123", "456", "coding", "test789"]
+# Jawaban Anda:
+for ubah in mixed_list:
+    if ubah.isalpha():
+        bener = ubah.upper()
+    elif ubah.isdecimal():
+        bener = "NUMBER"
+    else: 
+        bukan_angka = ''.join([c for c in ubah if not c.isdigit()])
+        bener = bukan_angka.title()
+    print(bener)
+
+
+print("=" * 50)
+
+# ================================
+# TODO 5: CEK SIMBOL
+# ================================
+# Soal: Dari list berikut, tampilkan yang TIDAK mengandung simbol apapun.
+#       (hanya huruf, angka, dan spasi)
+# Tambahkan kode Anda di sini:
+
+items = ["Hello World", "Test123", "Special!", "Code Python", "Bug@Here"]
+# Jawaban Anda:
+for item in items:
+    if all(c.isalnum() or c.isspace() for c in item):
+        print(item)
+
+print("=" * 50)
