@@ -48,3 +48,6 @@ games = [
 hasil_sort = sorted (games, key=lambda x: (-x[2], -x[1], x[0]))
 for game in hasil_sort:
     print(game)
+    
+"""materi list, tuple, set, dictionary
+"""
