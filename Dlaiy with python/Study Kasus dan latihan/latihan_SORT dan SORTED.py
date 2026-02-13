@@ -30,7 +30,7 @@ print("=" * 50)
 # Input:
 words = ["python", "java", "go", "javascript", "c"]
 # Jawaban Anda:
-sprted_words = sorted(words, key=len)
+sprted_words = sorted(words, key=len) # key membuat python mengintruksikan dan len yang akan di intruksikan yaitu menghitung jumlah elemen pada lits
 print(sprted_words)
 
 print("=" * 50)
@@ -43,7 +43,8 @@ print("=" * 50)
 # Input:
 text = "python"
 # Jawaban Anda:
-sorted_text = ''.join(sorted(text, reverse=True))
+sorted_text = ''.join(sorted(text, reverse=True))  # reverse jika awalnya adalah false yaitu mengitungkan dari kecil ke besar adanya = true akan kebalikan cara hitungnya dari besar ke kecil
+# sedengkan ''. adalah pimisah karna di sini tidak ada jadi kosongkan saja join untuk mengembalikan lits menjadi string menyatu.
 print(sorted_text)
 
 print("=" * 50)
@@ -73,6 +74,8 @@ numbers = [-20, 15, -5, 30, -10]
 # Jawaban Anda:
 sorted_by_abs = sorted(numbers, key=abs)
 print(sorted_by_abs)
-
+# jadi abs adalah mengurutkan berdasarkan absolut bagaimana caranya?
+# jadi minusnya di ilangin pada porses abs dan abs menjadi angka terdekat dengan 0 yaitu 5 dan akan menjadi -5 lagi jika sudah ketemu 
+# tidak mengubah hasil hanya saya menjadikan patokan cara mengurutan dari kecil ke besar
 
 print("=" * 50)
