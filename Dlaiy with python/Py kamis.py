@@ -48,6 +48,87 @@ games = [
 hasil_sort = sorted (games, key=lambda x: (-x[2], -x[1], x[0]))
 for game in hasil_sort:
     print(game)
-    
+
+print("=" * 60)
+print("materi list, tuple, set, dictionary")
 """materi list, tuple, set, dictionary
 """
+# lits Koleksi yang Dapat Diubah (Mutable)
+"""List adalah koleksi data yang dapat diubah, terurut, dan memungkinkan duplikat. 
+Elemen dapat ditambah, dihapus, atau diubah setelah list dibuat.
+"""
+print("lits")
+buah = ["apel", "pisang", "mangga"]
+buah.append("lemon")     # untuk menambahkan elemen
+buah[0] = "nanas"        # untuk ubah elemen
+buah.remove("pisang")    # untuk menghapus elemen
+print(buah)
+
+"""Kegunaan:
+
+- Menyimpan daftar data yang sering berubah (nilai siswa, item belanja, daftar tugas)
+- Ketika Anda perlu menambah/menghapus/mengubah data
+- Cocok untuk: Daftar nilai, daftar nama, daftar barang belanja, antrian
+"""
+
+print("=" * 60)
+
+# tuple Koleksi yang Tidak Dapat Diubah (Immutable)
+print("tuple")
+"""Penjelasan: Tuple mirip list, tetapi tidak bisa diubah setelah dibuat. 
+Cocok untuk data yang harus tetap konstan."""
+
+koordinat = (10, 20, 30, 70)
+print(koordinat[0])       # output: 10 karna di hitung dari index 0 
+# misal 
+# koordinat[0] = 5        # ini akan error karna tidak bisa di ubah
+
+x, y, z, b = koordinat       # unpacking 
+print(x, y, z,)            # output: 10 20 30
+
+"""Kegunaan:
+
+- Menyimpan data yang tidak boleh berubah (koordinat GPS, tanggal lahir, ID tetap)
+- Lebih cepat dan aman dari list
+- Bisa digunakan sebagai key di dictionary
+-Cocok untuk: Koordinat, tanggal, ID produk, data konfigurasi tetap"""
+
+print("=" * 60)
+
+print("set")
+# set  Koleksi Unik Tanpa Urutan
+"""Penjelasan: Set adalah koleksi yang tidak terurut, 
+tidak memiliki duplikat, dan dapat diubah. Cocok untuk operasi matematika himpunan.
+"""
+
+angka = {1, 2, 3, 4, 5, 5, 5} # duplikat otomatis akan dihapus
+print(angka)    # output {1, 2, 3, 4, 5}
+
+set_a = {1, 2, 3}
+set_b = {3, 4, 5}
+print(set_a & set_b)        # irisan: 3
+print(set_a | set_b)        # gabungan: {1, 2, 3, 4, 5}
+print(set_a - set_b)        # selisih: {1, 2}
+
+"""Kegunaan:
+
+- Menghilangkan duplikat dari data
+- Operasi himpunan (irisan, gabungan, selisih)
+- Cek keanggotaan dengan cepat
+- Cocok untuk: Daftar user unik, tag artikel, kategori produk, filter data"""
+
+print("=" * 60)
+
+print("dictionary")
+# DICTIONARY - Pasangan Key-Value
+"""Penjelasan: Dictionary menyimpan data dalam bentuk pasangan kunci-nilai. 
+Akses data menggunakan key, bukan index."""
+
+siswa = {
+    "nama": "Budi",
+    "umur": 20,
+    "jurusan": "Informatika"
+}
+print(siswa["nama"])           # Output: Budi
+siswa["nilai"] = 85            # Tambah key baru
+print(siswa.get("alamat", "Tidak ada"))  # Output: Tidak ada

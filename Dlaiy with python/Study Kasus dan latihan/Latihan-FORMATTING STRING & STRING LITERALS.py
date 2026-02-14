@@ -67,7 +67,8 @@ print("=" * 50)
 # ================================
 # Soal: Cetak dua baris: "Baris 1" dan "Baris 2" dalam satu string literal
 # Jawaban Anda:
-# ...
+baris = "baris1\nbaris2"
+print(baris)
 
 print("=" * 50)
 
@@ -76,7 +77,8 @@ print("=" * 50)
 # ================================
 # Soal: Cetak "Item 1" dan "Item 2" dengan tab di antaranya
 # Jawaban Anda:
-# ...
+item = "item 1\titem 2"
+print(item)
 
 print("=" * 50)
 
@@ -87,7 +89,8 @@ print("=" * 50)
 # Gunakan raw string
 # Jawaban Anda:
 path = r""
-# ...
+isi_path = r"C:\new\folder"
+print(isi_path)
 
 print("=" * 50)
 
@@ -96,12 +99,16 @@ print("=" * 50)
 # ================================
 # Soal: Format string "id" menjadi 4 karakter dengan leading zero, lalu tengahkan dalam 10 karakter
 # Input: "7"
-# Output: "0004"
+# Output: "0007"
 # Lalu: tengahkan dalam 10 karakter dengan "*"
 # Output: "***0007****"
 # Jawaban Anda:
 id_num = "7"
-# ...
+formatted = id_num.zfill(4)
+formatted_id = id_num.center(10,"*")
+
+print(formatted)
+print(formatted_id)
 
 print("=" * 50)
 
@@ -113,6 +120,10 @@ print("=" * 50)
 #       Lalu cetak dalam kolom rata kanan dengan lebar 8 karakter
 # Jawaban Anda:
 ids = ["1", "12", "123", "1234"]
-# ...
+for id_produk in ids:
+    format_id = id_produk.zfill(6)
+    rata_kanan = format_id.rjust(8)
+
+    print(rata_kanan)
 
 print("=" * 50)
