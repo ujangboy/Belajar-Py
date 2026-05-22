@@ -26,7 +26,11 @@ TODO: Buat fungsi untuk menghitung luas persegi panjang
 """
 
 # TULIS KODE ANDA DI SINI:
-
+def hitung_luas_persegi_panjang (panjang , lebar):
+      luas = panjang * lebar
+      return luas
+luas = hitung_luas_persegi_panjang(10, 5)
+print("Luas Persegi Panjang:", luas)      
 
 # ============================================
 # SOAL 2: Fungsi Cek Bilangan Prima
@@ -44,7 +48,15 @@ TODO: Buat fungsi untuk mengecek bilangan prima
 """
 
 # TULIS KODE ANDA DI SINI:
-
+def adalah_prima(n):
+      if n <= 1:
+            return False
+      for i in range(2, int(n**0.5) + 1):
+            if n % i == 0:
+                  return False
+      return True
+print("Apakah 17 bilangan prima?", adalah_prima(17))  # True
+print("Apakah 20 bilangan prima?", adalah_prima(20))  # False
 
 # ============================================
 # SOAL 3: Fungsi Faktorial
@@ -61,6 +73,12 @@ TODO: Buat fungsi untuk menghitung faktorial
 """
 
 # TULIS KODE ANDA DI SINI:
+def hitung_faktorial(n):
+      if n == 0 or n == 1:
+            return 1
+      else:
+            return n * hitung_faktorial(n - 1)
+print("Faktorial dari 5:", hitung_faktorial(5))  # 120      
 
 
 # ============================================
@@ -82,7 +100,19 @@ TODO: Buat fungsi untuk konversi suhu
 """
 
 # TULIS KODE ANDA DI SINI:
-
+def konversi_suhu(celsius, target):
+      if target == "F":
+            return (celsius * 9/5) + 32
+      elif target == "K":
+            return celsius + 273.15
+      elif target == "R":
+            return celsius * 4/5
+      else:
+            return "Target konversi tidak valid"
+      
+print("25°C ke Fahrenheit:", konversi_suhu(25, "F"))  # 77.0
+print("25°C ke Kelvin:", konversi_suhu(25, "K"))  # 298.15
+print("25°C ke Reamur:", konversi_suhu(25, "R"))  # 20.0
 
 # ============================================
 # SOAL 5: Fungsi Sort List
@@ -97,7 +127,10 @@ TODO: Buat fungsi yang mengurutkan list
 """
 
 # TULIS KODE ANDA DI SINI:
-
+def sort_list(list_input):
+      return sorted(list_input)
+test_list = [45, 23, 67, 12, 89]
+print("List sebelum diurutkan:", test_list)
 
 # ============================================
 # SOAL 6: Fungsi Hitung Rata-rata
@@ -113,7 +146,12 @@ TODO: Buat fungsi untuk menghitung rata-rata
 """
 
 # TULIS KODE ANDA DI SINI:
-
+def hitung_rata_rata(list_nilai):
+      total = sum(list_nilai)
+      jumlah = len(list_nilai)
+      return total / jumlah
+nilai = [85, 90, 78, 92, 88]
+print("Rata-rata nilai:", hitung_rata_rata(nilai))  # 86.6
 
 # ============================================
 # SOAL 7: Fungsi Validasi Password

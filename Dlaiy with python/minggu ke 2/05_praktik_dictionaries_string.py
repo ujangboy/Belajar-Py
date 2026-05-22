@@ -29,7 +29,16 @@ TODO: Buat dictionary untuk data profil pengguna
 """
 
 # TULIS KODE ANDA DI SINI:
-
+profil = {
+          "nama": "Andi Kurniawan",
+          "email": "andi@example.com",
+          "umur": 25,
+          "kota": "Jakarta"
+      }
+print(f"nama: {profil['nama']}")
+print(f"email: {profil['email']}")
+print(f"umur: {profil['umur']}")
+print(f"kota: {profil['kota']}")
 
 # ============================================
 # SOAL 2: Dictionary Produk dan Harga
@@ -48,7 +57,17 @@ TODO: Buat dictionary berisi 5 produk toko dengan harga
 """
 
 # TULIS KODE ANDA DI SINI:
+produk = {
+          "Laptop": 5000000,
+          "Mouse": 200000,
+          "Keyboard": 300000,          
+      }
 
+total_harga = sum(produk.values())
+poduk_teringgi =  max(produk, key = produk.get)
+
+print(f"Total harga semua produk: {total_harga}")
+print(f"Produk dengan harga tertinggi: {poduk_teringgi} - {produk[poduk_teringgi]}")
 
 # ============================================
 # SOAL 3: Modifikasi Dictionary
@@ -65,7 +84,13 @@ TODO: Diberikan dictionary:
 """
 
 # TULIS KODE ANDA DI SINI:
-
+nilai_siswa = {"Adi": 85, "Budi": 90, "Citra": 78, "Dina": 92}
+nilai_siswa["eka"] = 88
+print(nilai_siswa)
+nilai_siswa["Citra"] = 85
+print(nilai_siswa)
+remove = nilai_siswa.pop("Budi")
+print(nilai_siswa)
 
 # ============================================
 # SOAL 4: Iterasi Dictionary
@@ -84,7 +109,11 @@ TODO: Iterasi dan tampilkan semua key-value pairs
 """
 
 # TULIS KODE ANDA DI SINI:
+buku = {"Python": 2020, "JavaScript": 2019, 
+              "Java": 2018, "C++": 2017}
 
+for key, value in buku.items():
+    print(f"buku: {key} - tahun: {value}")
 
 # ============================================
 # SOAL 5: Split dan Join String
@@ -99,7 +128,11 @@ TODO: String manipulation dengan split dan join
 """
 
 # TULIS KODE ANDA DI SINI:
-
+teks = "Belajar-Python-Sangat-Menyenangkan"
+split_teks = teks.split("-")
+print(split_teks)
+join_teks = " | ".join(split_teks)
+print(join_teks)
 
 # ============================================
 # SOAL 6: Ekstrak Email
@@ -117,7 +150,13 @@ TODO: Ekstrak bagian-bagian dari email
 """
 
 # TULIS KODE ANDA DI SINI:
+email = "user@example.com"
 
+username, domain_ext = email.split("@")
+domain, ekstensi = domain_ext.split(".")
+print(f"Username: {username}")
+print(f"Domain: {domain}")
+print(f"Ekstensi: {ekstensi}")
 
 # ============================================
 # SOAL 7: Format String (3 Cara)

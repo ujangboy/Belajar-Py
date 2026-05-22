@@ -21,7 +21,8 @@ TODO: Tampilkan angka 1 hingga 10 menggunakan for loop
 """
 
 # TULIS KODE ANDA DI SINI:
-
+for i in range (1 ,11):
+      print(i, end=" ")
 
 # ============================================
 # SOAL 2: Hitung Jumlah Total Angka 1-100
@@ -35,7 +36,13 @@ TODO: Hitung jumlah total angka dari 1 hingga 100
 """
 
 # TULIS KODE ANDA DI SINI:
+print(" ")
 
+total = 0 
+for i in range (1, 101):
+      total += i
+print(total)
+  
 
 # ============================================
 # SOAL 3: Tabel Perkalian Angka 5
@@ -50,7 +57,9 @@ TODO: Tampilkan perkalian (tabel perkalian) angka 5
 """
 
 # TULIS KODE ANDA DI SINI:
-
+for i in range (1, 11):
+      perkalian = 5 * i
+      print(f"5 x {i} = {perkalian}")
 
 # ============================================
 # SOAL 4: Pola Bintang Segitiga
@@ -67,7 +76,8 @@ TODO: Buat pola bintang berbentuk segitiga
 """
 
 # TULIS KODE ANDA DI SINI:
-
+for i in range (1, 6):
+      print("*" * i)
 
 # ============================================
 # SOAL 5: Tampilkan Bilangan Genap 1-20
@@ -79,7 +89,8 @@ TODO: Tampilkan bilangan genap dari 1 hingga 20
 """
 
 # TULIS KODE ANDA DI SINI:
-
+for i in range (2, 21, 2):
+      print(i, end=" ")
 
 # ============================================
 # SOAL 6: Hitung Faktorial
@@ -94,7 +105,11 @@ TODO: Hitung nilai faktorial dari suatu angka
 """
 
 # TULIS KODE ANDA DI SINI:
-
+faktorial = 1
+n = 5
+for i in range (1, n + 1):
+      faktorial *= i
+print(f"Faktorial {n} = {faktorial}")
 
 # ============================================
 # SOAL 7: Iterasi List dengan Nomor Urut
@@ -115,7 +130,9 @@ TODO: Iterasi melalui list dan tampilkan setiap elemen
 """
 
 # TULIS KODE ANDA DI SINI:
-
+lits_buah = ["apel", "Mangga", "Pisang", "Jeruk", "Pepaya"]
+for i in range (len(lits_buah)):
+      print(f"{i + 1}. {lits_buah[i]}")
 
 # ============================================
 # SOAL 8: Hitung Kemunculan Huruf 'a'
@@ -130,6 +147,12 @@ TODO: Buat program untuk menghitung berapa kali huruf 'a'
 """
 
 # TULIS KODE ANDA DI SINI:
+mengitung_string = "python adalah bahasa pemrograman yang canggih"
+jumlah_a = 0
+for i in mengitung_string:
+      if i == "a":
+            jumlah_a += 1
+print(f"Jumlah huruf 'a': {jumlah_a}")
 
 
 # ============================================
@@ -145,7 +168,11 @@ TODO: Tampilkan deret Fibonacci sebanyak 10 angka
 """
 
 # TULIS KODE ANDA DI SINI:
-
+fibonacci = [0, 1]
+for i in range (2, 10):
+      next_fib = fibonacci[i - 1] + fibonacci[i - 2]
+      fibonacci.append(next_fib)
+print(" ".join(str(num) for num in fibonacci))
 
 # ============================================
 # SOAL 10: Input Berulang Sampai 'keluar'
@@ -162,7 +189,14 @@ TODO: Buat program input user yang terus berjalan sampai
 """
 
 # TULIS KODE ANDA DI SINI:
-
+while True:
+      user_input = input("Masukan sesuatu (ketik 'keluar' untuk berhenti): ")
+      if user_input.lower() == "keluar":
+            print("Program berhenti. Terima kasih!")
+            break
+      else:
+            print(f"Anda mengetik: {user_input}")
+            
 
 print()
 print("=" * 60)

@@ -22,7 +22,9 @@ TODO: Tentukan bilangan yang lebih besar di antara dua angka
 """
 
 # TULIS KODE ANDA DI SINI:
-
+a = 45
+b = 32
+print(f"{a} lebih besar dari {b}" if a > b else f"{b} lebih besar dari {a}")
 
 # ============================================
 # SOAL 2: Sistem Penilaian Huruf
@@ -37,8 +39,17 @@ TODO: Konversi nilai angka menjadi huruf grade
 """
 
 # TULIS KODE ANDA DI SINI:
-
-
+nilai = 75
+if nilai >= 80:
+    grade = "A"
+elif nilai >= 70:
+      grade = "B"
+elif nilai >= 60:
+      grade = "c"
+else: 
+      grade = "D"
+      
+print(f"Nilai {nilai} mendapatkan grade {grade}")
 # ============================================
 # SOAL 3: Cek Bilangan Genap atau Ganjil
 # ============================================
@@ -51,7 +62,9 @@ TODO: Tentukan apakah bilangan adalah genap atau ganjil
 """
 
 # TULIS KODE ANDA DI SINI:
-
+angka = 27
+if angka % 2 == 0:
+      print(f"{angka} adalah bilangan genap")
 
 # ============================================
 # SOAL 4: Tentukan Musim Berdasarkan Bulan
@@ -66,7 +79,17 @@ TODO: Tentukan musim berdasarkan bulan
 """
 
 # TULIS KODE ANDA DI SINI:
-
+bulan = 7
+if 1 <= bulan <= 3:
+      musim = "Musim Semi"
+elif 4 <= bulan <= 6:
+      musim = "Musim Panas"
+elif 7 <= bulan <= 9:
+      musim = "Musim Gugur"
+else:
+      musim = "Musim Dingin"
+      
+print(f"Bulan ke-{bulan} adalah {musim}")
 
 # ============================================
 # SOAL 5: Validasi Password
@@ -80,7 +103,10 @@ TODO: Cek apakah password benar
 """
 
 # TULIS KODE ANDA DI SINI:
-
+password = "python123"
+if password == "python123":
+      print("Login berhasil")
+else:      print("Password salah")
 
 # ============================================
 # SOAL 6: Tentukan Rating Film Berdasarkan Umur
@@ -94,7 +120,16 @@ TODO: Tentukan rating film berdasarkan umur
 """
 
 # TULIS KODE ANDA DI SINI:
+print("rating film berdasarkan umur:")
 
+umur = 16
+if umur < 13:
+      rating = "Hanya untuk anak di bawah 13 tahun"
+elif 13 <= umur <= 17:
+      rating = "PG-13"
+else: rating = "Film dewasa"
+
+print(f"Umur {umur} tahun: {rating}")
 
 # ============================================
 # SOAL 7: Cek Tahun Kabisat
@@ -113,7 +148,9 @@ TODO: Cek apakah tahun adalah tahun kabisat
 """
 
 # TULIS KODE ANDA DI SINI:
-
+tahun = 2024
+if (tahun % 4 == 0) and (tahun % 100 != 0 or tahun % 400 == 0):
+      print(f"{tahun} adalah tahun kabisat")
 
 # ============================================
 # SOAL 8: Hitung Diskon Berdasarkan Total Belanja
@@ -134,7 +171,21 @@ TODO: Hitung diskon berdasarkan total pembelian
 """
 
 # TULIS KODE ANDA DI SINI:
+belanja = 750000
+if belanja <= 100000:
+      diskon = 0
+elif 100001 <= belanja <= 500000:
+      diskon = 0.05
+elif 500001 <= belanja <= 1000000:
+      diskon = 0.10
+else:
+      diskon = 0.15
 
+diskon_rp = belanja * diskon
+harga_akhir = belanja - diskon_rp
+print(f"Total Belanja: Rp{belanja:,}")
+print(f"Diskon: {int(diskon * 100)}% = Rp{diskon_rp:,}")
+print(f"Harga Akhir: Rp{harga_akhir:,}")
 
 # ============================================
 # SOAL 9: Temukan Angka Terbesar dari 3 Angka
@@ -146,7 +197,18 @@ TODO: Temukan angka terbesar dari 3 angka
 """
 
 # TULIS KODE ANDA DI SINI:
+a = 10
+b = 20
+c = 30
 
+if a >= b and a >= c:
+      terbesar = a
+elif b >= a and b >= c:
+      terbesar = b
+else:
+      terbesar = c
+print(f"Angka: {a}, {b}, {c}")
+print(f"Angka terbesar adalah {terbesar}")
 
 # ============================================
 # SOAL 10: Validasi Email Sederhana
@@ -164,6 +226,13 @@ TODO: Validasi email sederhana
 """
 
 # TULIS KODE ANDA DI SINI:
+valid_email = "email@example.com"
+invalid_email = "emailcontohcom"    
+email = invalid_email
+if "@" in email and "." in email:
+      print("Email valid")
+else: print("Email tidak valid")
+
 
 
 print()

@@ -133,9 +133,9 @@ Setiap Quiz file berisi:
 Gunakan template ini untuk track progress:
 
 ```
-SENIN     [  ] Practice [  ] Quiz
-SELASA    [  ] Practice [  ] Quiz  
-RABU      [  ] Practice [  ] Quiz
+SENIN     [ 📌 ] Practice [  ] Quiz
+SELASA    [ 📌 ] Practice [  ] Quiz  
+RABU      [ 📌 ] Practice [  ] Quiz
 KAMIS     [  ] Practice [  ] Quiz
 JUMAT     [  ] Practice [  ] Quiz
 SABTU     [  ] Practice [  ] Quiz
