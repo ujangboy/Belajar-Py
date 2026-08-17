@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Analytics Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script href="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="background-glow">
+        <div class="glow-orb orb-purple"></div>
+        <div class="glow-orb orb-blue"></div>
+        <div class="glow-orb orb-emerald"></div>
+    </div>
+
+    <div class="dashboard-container">
+        <!-- HEADER -->
+        <header class="dashboard-header animate-fade-in">
+            <div class="header-title">
+                <div class="badge">
+                    <span class="pulse-dot"></span> Machine Learning Predictive Engine
+                </div>
+                <h1>Analisis Performa & Kelulusan Siswa</h1>
+                <p class="subtitle">Simulasi real-time pencapaian akademik dan peluang penempatan kerja menggunakan Random Forest</p>
+            </div>
+            <div class="model-badge">
+                <i class="fa-solid fa-brain"></i>
+                <div class="model-badge-text">
+                    <span class="model-status">Model Aktif</span>
+                    <span class="model-type">Random Forest (Accuracy: 88.65%)</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="dashboard-grid">
+            <!-- LEFT PANEL: SLIDER INPUTS -->
+            <section class="panel-inputs glass-card animate-slide-up" style="animation-delay: 0.1s;">
+                <div class="card-header">
+                    <i class="fa-solid fa-sliders text-gradient-purple"></i>
+                    <h2>Simulasi Karakteristik Siswa</h2>
+                </div>
+                <p class="card-description">Geser slider di bawah untuk mensimulasikan perilaku siswa dan melihat efeknya secara instan.</p>
+                
+                <div class="input-groups-wrapper">
+                    <!-- ACADEMIC GROUP -->
+                    <div class="input-category-box">
+                        <h3 class="category-title"><i class="fa-solid fa-graduation-cap"></i> Metrik Akademik</h3>
+                        
+                        <!-- study_hours -->
+                        <div class="slider-group">
+                            <div class="slider-info">
+                                <label for="study_hours">Jam Belajar / Hari</label>
+                                <span class="slider-value" id="val-study_hours">6 Jam</span>
+                            </div>
+                            <input type="range" id="study_hours" min="1" max="11" value="6" step="1" class="custom-slider">
+                            <span class="range-labels"><span>1 Jam</span><span>11 Jam</span></span>
+                        </div>
+
+                        <!-- attendance -->
+                        <div class="slider-group">
+                            <div class="slider-info">
+                                <label for="attendance">Kehadiran Kelas</label>
+                                <span class="slider-value" id="val-attendance">75%</span>
+                            </div>
+                            <input type="range" id="attendance" min="40" max="100" value="75" step="1" class="custom-slider">
+                            <span class="range-labels"><span>40%</span><span>100%</span></span>
+                        </div>
+
+                        <!-- assignments_completed -->
+                        <div class="slider-group">
+                            <div class="slider-info">
+                                <label for="assignments_completed">Tugas yang Diselesaikan</label>
+                                <span class="slider-value" id="val-assignments_completed">10</span>
+                            </div>
+                            <input type="range" id="assignments_completed" min="0" max="20" value="10" step="1" class="custom-slider">
+                            <span class="range-labels"><span>0 Tugas</span><span>20 Tugas</span></span>
+                        </div>
+
+                        <!-- previous_score -->
+                        <div class="slider-group">
+                            <div class="slider-info">
+                                <label for="previous_score">Nilai Ujian Sebelumnya</label>
+                                <span class="slider-value" id="val-previous_score">65</span>
+                            </div>
+                            <input type="range" id="previous_score" min="35" max="95" value="65" step="1" class="custom-slider">
+                            <span class="range-labels"><span>35</span><span>95</span></span>
+                        </div>
+                    </div>
+
+                    <!-- LIFESTYLE GROUP -->
+                    <div class="input-category-box">
+                        <h3 class="category-title"><i class="fa-solid fa-user-gear"></i> Kebiasaan & Gaya Hidup</h3>
+
+                        <!-- sleep_hours -->
+                        <div class="slider-group">
+                            <div class="slider-info">
+                                <label for="sleep_hours">Durasi Tidur / Malam</label>
+                                <span class="slider-value" id="val-sleep_hours">7 Jam</span>
+                            </div>
+                            <input type="range" id="sleep_hours" min="4" max="9" value="7" step="1" class="custom-slider">
+                            <span class="range-labels"><span>4 Jam</span><span>9 Jam</span></span>
+                        </div>
+
+                        <!-- internet_usage -->
+                        <div class="slider-group">
+                            <div class="slider-info">
+                                <label for="internet_usage">Penggunaan Internet</label>
+                                <span class="slider-value" id="val-internet_usage">Skala 6</span>
+                            </div>
+                            <input type="range" id="internet_usage" min="1" max="11" value="6" step="1" class="custom-slider">
+                            <span class="range-labels"><span>Rendah (1)</span><span>Tinggi (11)</span></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RIGHT PANEL: DYNAMIC RESULTS -->
+            <section class="panel-results animate-slide-up" style="animation-delay: 0.2s;">
+                <!-- DYNAMIC EXAM SCORE CARD -->
+                <div class="glass-card result-card score-card">
+                    <div class="card-header">
+                        <i class="fa-solid fa-star-half-stroke text-gradient-amber"></i>
+                        <h2>Prediksi Nilai Ujian</h2>
+                    </div>
+                    <div class="score-display-container">
+                        <div class="circular-progress-wrapper">
+                            <svg class="circular-progress" viewBox="0 0 120 120">
+                                <circle class="bg-circle" cx="60" cy="60" r="50"></circle>
+                                <circle class="fg-circle" id="score-progress-circle" cx="60" cy="60" r="50"></circle>
+                            </svg>
+                            <div class="progress-value" id="score-text">0.0</div>
+                        </div>
+                        <div class="result-details">
+                            <span class="result-label">ESTIMASI SKOR AKHIR</span>
+                            <h3 id="score-grade">Cukup</h3>
+                            <p id="score-insight">Hasil didasarkan pada metrik kebiasaan belajar dan absensi saat ini.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DYNAMIC PLACEMENT STATUS CARD -->
+                <div class="glass-card result-card placement-card">
+                    <div class="card-header">
+                        <i class="fa-solid fa-briefcase text-gradient-emerald"></i>
+                        <h2>Status Penempatan Kerja</h2>
+                    </div>
+                    <div class="placement-display-container">
+                        <div class="gauge-container">
+                            <div class="gauge-bar-outer">
+                                <div class="gauge-bar-inner" id="placement-gauge" style="width: 0%;"></div>
+                            </div>
+                            <span class="gauge-percentage" id="placement-prob-text">0%</span>
+                        </div>
+                        <div class="placement-status-badge-container">
+                            <div id="placement-badge" class="badge-status not-placed">
+                                <i class="fa-solid fa-circle-xmark"></i> <span id="placement-badge-text">NOT PLACED</span>
+                            </div>
+                            <p class="status-explanation">Probabilitas dihitung berdasarkan performa ujian prediksi dan kesiapan akademik.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QUICK RECOMENDATION CARD -->
+                <div class="glass-card result-card insight-card">
+                    <div class="card-header">
+                        <i class="fa-solid fa-lightbulb text-gradient-indigo"></i>
+                        <h2>Rekomendasi Cerdas AI</h2>
+                    </div>
+                    <div class="insight-content">
+                        <p id="recommendation-text">Memuat rekomendasi...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BOTTOM PANEL: VISUALIZATION CHARTS -->
+            <section class="panel-charts glass-card animate-slide-up" style="animation-delay: 0.3s;">
+                <div class="card-header">
+                    <i class="fa-solid fa-chart-line text-gradient-emerald"></i>
+                    <h2>Visualisasi & Analisis Model</h2>
+                </div>
+                <div class="charts-grid">
+                    <div class="chart-container">
+                        <h3>Simulasi "What-If" (Jam Belajar vs Nilai Ujian)</h3>
+                        <p class="chart-subtitle">Bagaimana nilai ujian berubah jika jam belajar ditambah, dengan parameter lain tetap.</p>
+                        <div class="canvas-wrapper">
+                            <canvas id="whatIfChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Tingkat Pengaruh Fitur (Feature Importance)</h3>
+                        <p class="chart-subtitle">Faktor yang paling menentukan hasil nilai ujian dalam model Machine Learning.</p>
+                        <div class="canvas-wrapper">
+                            <canvas id="importanceChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="dashboard-footer animate-fade-in" style="animation-delay: 0.4s;">
+            <p>&copy; 2026 Student Performance Analytics Engine. Dibuat secara lokal dengan Python FastAPI, Random Forest, & Chart.js.</p>
+        </footer>
+    </div>
+
+    <!-- Script JS -->
+    <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+    "regression": {
+        "mae": 5.88504955,
+        "r2": 0.7125205197157145,
+        "feature_importances": {
+            "study_hours": 0.34795546648848996,
+            "attendance": 0.13615974998746383,
+            "sleep_hours": 0.05684744154569923,
+            "internet_usage": 0.07357991330548083,
+            "assignments_completed": 0.20772299194669736,
+            "previous_score": 0.17773443672616882
+        }
+    },
+    "classification": {
+        "accuracy": 0.8865,
+        "feature_importances": {
+            "study_hours": 0.2508878815410471,
+            "attendance": 0.17568509301852075,
+            "sleep_hours": 0.07932769855705497,
+            "internet_usage": 0.10257335986477972,
+            "assignments_completed": 0.19407183101455405,
+            "previous_score": 0.19745413600404352
+        }
+    }
+}
